@@ -1,0 +1,6 @@
+
+var GAME_ENGINE_STATES = {
+    MAIN_MENU: 1,
+    GAME_RUNNING: 2,
+    GAME_PAUSED: 3
+};

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Table</title>
+        <script src="js/GameEngine/GameEngineStates.js"></script>
+        <script src="js/GameEngine/GameEngine.js"></script>
+
+        <script src="js/GameEngine/GraphicEngine/GraphicEngine.js"></script>
+        <script src="js/GameEngine/GraphicEngine/CanvasGraphicEngine.js"></script>
+        <script src="js/GameEngine/GraphicEngine/GraphicEngineFactory.js"></script>
+
+        <script src="js/GameEngine/InputController/InputKeys.js"></script>
+        <script src="js/GameEngine/InputController/InputController.js"></script>
+        <script src="js/GameEngine/InputController/KeyboardInputController.js"></script>
+        <script src="js/GameEngine/InputController/InputControllerFactory.js"></script>
+
+        <script src="js/GameEngine/Scene.js"></script>
+        <script src="js/GameEngine/Entity.js"></script>
+        <script src="js/GameEngine/CollisionDetector.js"></script>
+
+        <script src="js/GameEngine/TextEngine/TextEngine.js"></script>
+        <script src="js/GameEngine/TextEngine/TextLine.js"></script>
+        <script src="js/GameEngine/TextEngine/TextLineAnimator.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Character.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterA.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterB.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterC.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterD.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterE.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterF.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterG.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterH.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterI.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterJ.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterK.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterL.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterM.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterN.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterO.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterP.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterQ.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterR.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterS.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterT.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterU.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterV.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterW.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterX.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterY.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Letter/LetterZ.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number0.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number1.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number2.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number3.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number4.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number5.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number6.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number7.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number8.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Number/Number9.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/Token/TokenSpace.js"></script>
+        <script src="js/GameEngine/TextEngine/Character/CharacterFactory.js"></script>
+
+        <script src="js/GameEngine/MenuEngine/MenuEngine.js"></script>
+        <script src="js/GameEngine/MenuEngine/Menu.js"></script>
+
+        <script src="js/GameEngine/Game.js"></script>
+        <script src="js/GameEngine/GameFactory.js"></script>
+
+        <script src="js/Games/Disco/DiscoGame.js"></script>
+        <script src="js/Games/Disco/Entity/Point.js"></script>
+
+        <script src="js/Games/Snake/SnakeGameStates.js"></script>
+        <script src="js/Games/Snake/SnakeGame.js"></script>
+        <script src="js/Games/Snake/SnakeDirections.js"></script>
+        <script src="js/Games/Snake/Entity/Snake.js"></script>
+        <script src="js/Games/Snake/Entity/Food.js"></script>
+
+    </head>
+    <body>
+        <script>
+
+            var graphicEngine = GraphicEngineFactory.load(),
+                inputController = InputControllerFactory.load(),
+                collisionDetector = new CollisionDetector(),
+                textEngine = new TextEngine(),
+                menuEngine = new MenuEngine(textEngine, graphicEngine, inputController);
+
+            var gameFactory = new GameFactory(graphicEngine, inputController, collisionDetector, textEngine);
+            var gameEngine = new GameEngine(inputController, menuEngine, gameFactory);
+
+            gameEngine.loop();
+//
+//            var text = textEngine.createLine('bier is lekker', 'red');
+//            var scene = new Scene();
+//
+//            text.setOffset(16, 5);
+//
+//            scene.add(text);
+//
+//            var animator = new TextLineAnimator(graphicEngine, text);
+//
+//            console.log(text);
+//            console.log(scene);
+//
+//            graphicEngine.draw(scene);
+//
+//            setInterval(function() {
+//                animator.loop();
+//            }, 50);
+
+        </script>
+    </body>
+</html>
